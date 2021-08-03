@@ -1,0 +1,119 @@
+@font-face {
+    font-family: "Poppins";
+    src: url("fonts/Poppins-Black.ttf");
+    src: url("fonts/Poppins-Regular.ttf");
+}
+@font-face {
+    font-family: "Roboto";
+    /* src: url("fonts/Roboto-Black.ttf"); */
+    src: url("fonts/Roboto-Regular.ttf");
+}
+*{
+    box-sizing: border-box;
+    font-family: "Roboto";
+    font-size: 24px;
+    line-height: 1.6;
+}
+html, body{
+    padding: 0;
+    background-color: #F5A05C;
+    margin: 0;
+}
+#App{
+    max-width: 1440px;
+}
+
+#header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 120px 0 120px;
+    background-color: #fff;
+}
+
+#header #menu ul{
+    display: flex;
+    list-style: none;
+}
+
+#header #menu ul li{
+    font-size: 24;
+    padding: 0;
+    margin: 0 100px 0 0;
+}
+
+#banner{
+    position: relative;
+    background-color: #F5A05C;
+}
+
+#banner #bg{
+    background-image: url('./images/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50px;
+}
+
+#banner .content{
+    display: flex;
+    height: 100vh;
+    padding: 80px 120px;
+}
+#banner .content > div{
+    width: 50%;
+}
+
+#banner .content #main{
+    display: flex;
+    flex-direction: column;
+}
+
+#banner .content #main #caption{
+    margin: 0 0 auto 0;
+    color: #021718;
+}
+
+#banner .content #main #caption h1{
+    font-size: 64px;
+}
+#banner .content #main #caption button{
+    background-color: #01847F;
+    border: none;
+    box-shadow: 0 4px 4px 0 #00000000;
+    padding: 0 10px;
+    color: #fff;
+}
+#banner .content #main .social span{
+    margin-right: 50px;
+}
+
+#banner .content #hero{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#banner .content #hero img{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    z-index: 3;
+}
+#banner .content #hero img:first-child{
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -49%) rotate(0deg);
+    z-index: 2;
+}
+
+/* #banner .content #hero img:first-child{
+    position: static;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+} */
+
