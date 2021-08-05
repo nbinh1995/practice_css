@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image_Grid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&family=Sacramento&display=swap" rel="stylesheet">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        html,body{
+            padding: 0;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14.5px;
+            background-color: #eee;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+        #app{
+
+        }
+        .grid{
+            display: grid;
+            max-width: 69rem;
+            margin: 0 auto;
+            grid-gap:1rem;
+            grid-template-columns:  repeat(auto-fit, 13rem);
+            grid-auto-rows: 13rem;
+            grid-auto-flow: dense;
+        }
+        .item{
+            background-color: #fff;
+        }
+        .item-title{
+            font-family: 'Sacramento', cursive;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 68px;
+            font-weight: lighter;
+        }
+        .item-text{
+            padding: 1.8rem;
+            font-weight: 300;
+        }
+        .item-text p{
+            font-style: italic;
+        }
+        .col-span-2{
+            grid-column: auto/span 2;
+        }
+        .col-span-4{
+            grid-column: auto/span 5;
+        }
+        .row-span-2{
+            grid-row: auto/span 2;
+        }
+        .article figure{
+            display: flex;
+            margin: 0;
+            padding: 0;
+            margin-right: -1rem;
+            color: #666;
+            height: 100%;
+        }
+        .article figure div{
+            width: calc(50% - 1rem);
+            margin-right: 1rem;
+        }
+        .article figure article{
+            width: calc(50% - 1rem);
+            margin-right: 1rem;
+            padding: 5%;
+        }
+        .article figure article h1{
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .article figure article button{
+            width: 100%;
+            background-color: transparent;
+            padding: 1rem 0;
+            border: 1px solid;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="grid">
+                <div class="item item-title col-span-2 row-span-2">
+                    <p>Travel and see the world</p>
+                </div>
+                <div class="item">
+                    <img src="./images/pexels-photo-443416.jpeg" alt="">
+                </div>
+                <div class="item">
+                    <img src="./images/pexels-photo-542411.jpeg" alt="">
+                </div>
+                <div class="item item-text">
+                    <p>Travel is fatal to prejudice, bigotry, and narrow-mindedness.</p>
+                    <div class="auther">— Mark Twain</div>
+                </div>
+                <div class="item col-span-2">
+                    <img src="./images/pexels-photo-614494.jpeg" alt="">
+                </div>
+                <div class="item">
+                    <img src="./images/pexels-photo-386009.jpeg" alt="">
+                </div>
+                <div class="item col-span-4 row-span-2 article">
+                    <figure>
+                        <div>
+                            <img src="./images/pexels-photo-1125278.jpeg" alt="">
+                        </div>
+                        <article>
+                            <h1>Quisque volutpat.</h1>
+                            <p>Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. <br> <br>
+                                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                            <button>More...</button>
+                        </article>
+                    </figure>
+                </div>
+                <div class="item row-span-2">
+                    <img src="./images/pexels-photo-920968.jpeg" alt="">
+                </div>
+                <div class="item col-span-2 article">
+                    <figure>
+                        <div>
+                            <img src="./images/pexels-photo-885880.jpeg" alt="">
+                        </div>
+                        <article>
+                            <h1>Lorem ipsum</h1>
+                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra</p>
+                        </article>
+                    </figure>
+                </div>
+                <div class="item row-span-2">
+                    <img src="./images/pexels-photo-450597.jpeg" alt="">
+                </div>
+                <div class="item">
+                    <img src="./images/pexels-photo-269923.jpeg" alt="">
+                </div>
+                <div class="item item-text">
+                    <p>We wander for distraction, but we travel for fulfilment.</p>
+                    <div class="auther">— Hilaire Belloc</div>
+                </div>
+                <div class="item">
+                    <img src="./images/sunrise-phu-quoc-island-ocean.jpeg" alt="">
+                </div>
+                <div class="item">
+                    <img src="./images/pexels-photo-373912.jpeg" alt="">
+                </div>
+                <div class="item col-span-2 row-span-2">
+                    <img src="./images/pexels-photo-247929.jpeg" alt="">
+                </div>
+                <div class="item item-title col-span-2">
+                    <p  >Bon voyage</p>
+                </div>
+                <div class="item item-text">
+                    <p>A good traveller has no fixed plans and is not intent on arriving.</p>
+                    <div class="auther">— Lao Tzu</div>
+                </div>
+                <div class="item col-span-2">
+                    <img src="./images/pexels-photo-358319.jpeg" alt="">
+                </div>
+                <div class="item">
+                    <img src="./images/pexels-photo-386007.jpeg" alt="">
+                </div>
+        </div>
+    </div>
+</body>
+</html>

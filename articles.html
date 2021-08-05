@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        html,body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.75;
+            background-color: #eee;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+        .articles{
+            max-width: 1284px;
+            margin: 0 auto;
+        }
+        .container-item{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .item {
+            max-width: calc(321px - 15px);
+            width: 100%;
+            height: 500px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            background-color: #fff;
+            box-shadow: none;
+            margin-top: 0;
+            transition: all 0.4s;
+        }
+        .item img{
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+        }
+        .item article{
+            margin: 0 26px 26px 26px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: calc(100% - 26px - 200px)
+        }
+        .item article .auther{
+            text-transform: uppercase;
+            color: #ddd;
+            font-weight: bold;
+        }
+        .item article h1{
+            font-size: 20px;
+        }
+        
+        .item.main{
+            max-width: calc(642px - 15px);
+        }
+        .item.main img{
+            height: 350px;
+        }
+        .item.main article{
+            height: calc(100% - 26px - 350px)
+        }
+        .item:hover {
+            margin-top: -2px;
+            box-shadow: 0px 5px 10px 5px rgb(0,0,0,0.2);
+            transition: all 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <div id="App" >
+        <section class="articles">
+            <h1>Cool Articles</h1>
+            <main class="container-item">
+            <div class="item main" >
+                <a href="">
+                    <img src="./images/flex-1.jpeg" alt="img">
+                    <article>
+                        <div>
+                            <h1>International Artist Feature: Malaysia</h1>
+                            <p class="content"></p>
+                        </div>
+                        <div class="auther">Mary Winkler</div>
+                    </article>
+                </a>
+            </div>
+            <div class="item">
+                <a href="">
+                    <img src="./images/users-2.png" alt="img">
+                    <article>
+                        <div>
+                            <h1>How to Conduct Remote Usability Testing</h1>
+                            <p class="content"></p>
+                        </div>
+                        <div class="auther">Harry Brignull</div>
+                    </article>
+                </a>
+            </div>
+            <div class="item">
+                <a href="">
+                    <img src="./images/flex-5.jpeg" alt="img">
+                    <article>
+                        <div>
+                            <h1>Created by You, July Edition</h1>
+                            <p class="content">Welcome to our monthly feature of fantastic tutorial results created by you, the Envato Tuts+ community! </p>
+                        </div>
+                        <div class="auther">Melody Nieves</div>
+                    </article>
+                </a>
+            </div>
+            
+            <div class="item">
+                <a href="">
+                    <img src="./images/landing.png" alt="img">
+                    <article>
+                        <div>
+                            <h1>How to Code a Scrolling “Alien Lander” Website</h1>
+                            <p class="content">We’ll be putting things together so that as you scroll down from the top of the page you’ll see an “Alien Lander” making its way to touch down.</p>
+                        </div>
+                        <div class="auther">Kezz Bracey</div>
+                    </article>
+                </a>
+            </div>
+
+            <div class="item">
+                <a href="">
+                    <img src="./images/strange.jpeg" alt="img">
+                    <article>
+                        <div>
+                            <h1>How to Create a “Stranger Things” Text Effect in Adobe Photoshop</h1>
+                            <p class="content"></p>
+                        </div>
+                        <div class="auther">Rose</div>
+                    </article>
+                </a>
+            </div>
+
+            <div class="item">
+                <a href="">
+                    <img src="./images/flor.jpeg" alt="img">
+                    <article>
+                        <div>
+                            <h1>5 Inspirational Business Portraits and How to Make Your Own</h1>
+                            <p class="content"></p>
+                        </div>
+                        <div class="auther">Marie Gardiner</div>
+                    </article>
+                </a>
+            </div>
+
+            <div class="item">
+                <a href="">
+                    <img src="./images/china.png" alt="img">
+                    <article>
+                        <div>
+                            <h1>Notes From Behind the Firewall: The State of Web Design in China</h1>
+                            <p class="content"></p>
+                        </div>
+                        <div class="auther">Kendra Schaefer</div>
+                    </article>
+                </a>
+            </div>
+        </main>
+        </section>
+    </div>
+</body>
+</html>
