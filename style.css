@@ -24,21 +24,76 @@ html, body{
 }
 
 #header{
+    position: fixed;
     display: flex;
     justify-content: space-between;
     padding: 0 120px 0 120px;
     background-color: #fff;
+    z-index: 7;
+    width: 100%;
 }
 
 #header #menu ul{
     display: flex;
     list-style: none;
+    height: calc(100% - 1em);
 }
 
 #header #menu ul li{
     font-size: 24;
     padding: 0;
     margin: 0 100px 0 0;
+    cursor: pointer;
+    position: relative;
+}
+#header #menu ul li a{
+    text-decoration: none;
+    color: #000;
+}
+#header #menu ul #search img:first-of-type{
+    display: block;
+    opacity: 1;
+}
+
+#header #menu ul #search img:last-of-type{
+    display: none;
+    opacity: 0;
+}
+
+#header #menu ul #search.active img:first-of-type{
+    display: none;
+    opacity: 0;
+    transition:opacity 1s;
+}
+
+#header #menu ul #search.active img:last-of-type{
+    display: block;
+    opacity: 1;
+}
+
+#header #menu ul #search span{
+    position: absolute;
+    display: none;
+    opacity: 0;
+    right: 0;
+    top: 100%;
+    padding: 10px;
+    border-radius: 0px 0px 5px 5px;
+    z-index: 4;
+    background-color: #eee;
+}
+
+#header #menu ul #search input{
+    border: none;
+    background-color: #eee;
+    outline-style: none;
+    padding-left: 10px;
+}
+
+#header #menu ul #search.active span{
+    display: block;
+    opacity: 1;
+    transition: opacity 1s;
 }
 
 #banner{
@@ -46,7 +101,8 @@ html, body{
     background-color: #F5A05C;
 }
 
-#banner #bg{
+#banner::before{
+    content: '';
     background-image: url('./images/bg.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -79,6 +135,7 @@ html, body{
 #banner .content #main #caption h1{
     font-size: 64px;
 }
+
 #banner .content #main #caption button{
     background-color: #01847F;
     border: none;

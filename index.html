@@ -16,13 +16,21 @@
             </div>
             <nav id="menu">
                 <ul>
-                    <li>blog</li>
-                    <li>contact</li>
-                    <li>about</li>
-                    <li><img src="./images/icon_search.svg" alt="search"></li>
+                    <li><a href="">blog</a></li>
+                    <li><a href="">contact</a></li>
+                    <li><a href="">about</a></li>
+                    <li id="search">
+                        <img src="./images/icon_search.svg" alt="search">
+                        <img src="./images/icon_close.svg" alt="search">
+                        <span class="search-form">
+                            <input type="text" placeholder="Search here ...">
+                        </span>
+                    </li>
                 </ul>
             </nav>
+            
         </header>
+        <div id="fixH"></div>
         <div id="banner">
             <div id="bg"></div>
             <div class="content">
@@ -45,5 +53,11 @@
             </div>
         </div>
     </div>
+    <script>
+        document.querySelector('#fixH').style.height = document.getElementById('header').offsetHeight + 'px';
+        document.getElementById('search').addEventListener('click',function(e){
+            this.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
