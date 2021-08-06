@@ -1,0 +1,618 @@
+<!-- http://nizoapp.com/ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nizapp</title>
+    <style>
+        @font-face {
+            font-family: 'Proxima';
+            src: url('./fonts/Proxima\ Nova\ Font.otf');
+        }
+        *{
+            box-sizing: border-box;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        img{
+            width: 100%;
+            height: auto;
+        }
+        body,html{
+            font-family: Proxima , Helvetica, sans-serif;
+            background-color: #DEDDD8;
+            font-size: 14px;
+        }
+        #app{
+            margin: 0 auto;
+            max-width: 1024px;
+            position: relative;
+        }
+        #app .logo{
+            position: fixed;
+            top: 115px;
+            width: 210px;
+            margin-left: 35px;
+            z-index: 99;
+            transition: top 0.5s;
+        }
+        #app .slogan{
+            font-weight: bold;
+            font-size: 45px;
+            color: #fff;
+            position: absolute;
+            top: 300px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding-bottom: 60px;
+        }
+        #app .slogan p{
+            margin-right: 50px;
+
+        }
+        #app .content{
+            position: relative;
+            /* padding-top: 635px; */
+            display: flex;
+            margin-left: 63px;
+        }
+        #app .content .item{
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotate(0deg);
+            transition: all 500ms;
+        }
+
+        #app .content .item:nth-child(1){
+            margin-top: 0;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(2){
+            position: relative;
+            margin-top: 0;
+            margin-left: 275px;
+        }
+        #app .content .item:nth-child(3){
+            margin-top: 0;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+
+        #app .content .item:nth-child(4){
+            margin-top: 0;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(5){
+            margin-top: 42px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(6){
+            margin-top: 270px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(7){
+            margin-top: 270px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(8){
+            margin-top: 345px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(9){
+            margin-top: 345px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(10){
+            margin-top: 370px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(11){
+            margin-top: 265px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(12){
+            margin-top: 265px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(13){
+            margin-top: 165px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(14){
+            margin-top: 199px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(15){
+            margin-top: 370px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(16){
+            margin-top: 420px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(17){
+            margin-top: 480px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(18){
+            margin-top: 508px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(19){
+            margin-top: 509px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(20){
+            margin-top: 488px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(21){
+            margin-top: 553px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(22){
+            margin-top: 542px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(23){
+            margin-top: 523px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+
+        }
+        #app .content .item:nth-child(24){
+            margin-top: 561px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(25){
+            margin-top: 650px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(26){
+            margin-top: 650px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(27){
+            margin-top: 651px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(28){
+            margin-top: 629px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(29){
+            margin-top: 633px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(30){
+            margin-top: 746px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(31){
+            margin-top: 771px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(32){
+            margin-top: 730px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(33){
+            margin-top: 735px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(34){
+            margin-top: 786px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(35){
+            margin-top: 832px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(36){
+            margin-top: 806px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(37){
+            margin-top: 802px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(38){
+            margin-top: 892px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(39){
+            margin-top: 946px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(40){
+            margin-top: 940px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(41){
+            margin-top: 947px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(42){
+            margin-top: 1006px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(43){
+            margin-top: 1007px;
+            margin-left: -100%;
+        }
+        #app .content .item:nth-child(44){
+            margin-top: 361px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(45){
+            margin-top: 250px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .content .item:nth-child(46){
+            margin-top: 400px;
+            margin-right: -100%;
+            left: unset;
+            right: 0;
+        }
+        #app .footer{
+            padding-top: 90px;
+        }
+        #app .footer > div{
+            display: flex;
+            justify-content: flex-end;
+            font-size: 18px;
+            border-bottom: 1px solid #999;
+        }
+
+        #app .footer > div > div{
+            display: flex;
+            align-items: center;
+            padding-left: 1rem;
+            width: 25%;
+            position: relative;
+        }
+
+        #app .footer > div > div::before{
+            content: '';
+            position: absolute;
+            border-left: 1px solid #999;
+            top: 50%;
+            bottom: 0;
+            right: 100%;
+        }
+
+        #app .footer > div > div > .char{
+            background-color: black;
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            margin-right: 5px;
+            text-align: center;
+            padding: 12px 0;
+            transition: border-radius 500ms;
+        }
+
+
+        #app .footer > div > p{
+            padding-right: 1rem;
+        }
+        #app .footer > p{
+            width: 250px;
+            margin-left: auto;
+        }
+
+        #app .logo.end{
+            top: 390px;
+        }
+        #app .content .item:nth-child(1).scroll{
+            margin-left: 0;
+        }
+        #app .content .item:nth-child(3).scroll{
+            margin-right: 240px;
+        }
+        #app .content .item:nth-child(4).scroll{
+            margin-right: 80px;
+        }
+        #app .content .item:nth-child(5).scroll{
+            margin-right: -65px;
+        }
+        #app .content .item:nth-child(6).scroll{
+            margin-left: 0;
+        }
+        #app .content .item:nth-child(7).scroll{
+            margin-left: 120px;
+        }
+        #app .content .item:nth-child(8).scroll{
+            margin-left: -13px;
+        }
+        #app .content .item:nth-child(9).scroll{
+            margin-left: 115px;
+        }
+        #app .content .item:nth-child(10).scroll{
+            margin-right: 365px;
+        }
+        #app .content .item:nth-child(11).scroll{
+            margin-right: 320px;
+        }
+        #app .content .item:nth-child(12).scroll{
+            margin-right: 240px;
+        }
+        #app .content .item:nth-child(13).scroll{
+            margin-right: 73px;
+        }
+        #app .content .item:nth-child(14).scroll{
+            margin-right: 0;
+        }
+        #app .content .item:nth-child(15).scroll{
+            margin-right: 260px;
+        }
+        #app .content .item:nth-child(16).scroll{
+            margin-left: 85px;
+        }
+        #app .content .item:nth-child(17).scroll{
+            margin-left: 0;
+        }
+        #app .content .item:nth-child(18).scroll{
+            margin-left: 315px;
+        }
+        #app .content .item:nth-child(19).scroll{
+            margin-left: 426px;
+        }
+        #app .content .item:nth-child(20).scroll{
+            margin-right: 335px;
+        }
+        #app .content .item:nth-child(21).scroll{
+            margin-right: 390px;
+        }
+        #app .content .item:nth-child(22).scroll{
+            margin-right: 265px;
+        }
+        #app .content .item:nth-child(23).scroll{
+            margin-right: 140px;
+        }
+        #app .content .item:nth-child(24).scroll{
+            margin-left: 303px;
+        }
+        #app .content .item:nth-child(25).scroll{
+            margin-right: 215px;
+        }
+        #app .content .item:nth-child(26).scroll{
+            margin-left: 23px;
+        }
+        #app .content .item:nth-child(27).scroll{
+            margin-left: 243px;
+        }
+        #app .content .item:nth-child(28).scroll{
+            margin-right: 305px;
+        }
+        #app .content .item:nth-child(29).scroll{
+            margin-right: 0px;
+        }
+        #app .content .item:nth-child(30).scroll{
+            margin-left: 243px;
+        }
+        #app .content .item:nth-child(31).scroll{
+            margin-right: 315px;
+        }
+        #app .content .item:nth-child(32).scroll{
+            margin-right: 40px;
+        }
+        #app .content .item:nth-child(33).scroll{
+            margin-right: -15px;
+        }
+        #app .content .item:nth-child(34).scroll{
+            margin-right: -78px;
+        }
+        #app .content .item:nth-child(35).scroll{
+            margin-left: 23px;
+        }
+        #app .content .item:nth-child(36).scroll{
+            margin-left: 246px;
+        }
+        #app .content .item:nth-child(37).scroll{
+            margin-left: 402px;
+        }
+        #app .content .item:nth-child(38).scroll{
+            margin-right: 315px;
+        }
+        #app .content .item:nth-child(39).scroll{
+            margin-left: 28px;
+        }
+        #app .content .item:nth-child(40).scroll{
+            margin-left: 278px;
+        }
+        #app .content .item:nth-child(41).scroll{
+            margin-right: -15px;
+        }
+        #app .content .item:nth-child(42).scroll{
+            margin-left: 28px;
+        }
+        #app .content .item:nth-child(43).scroll{
+            margin-left: 180px;
+        }
+        #app .content .item:nth-child(44).scroll{
+            margin-right: 0px;
+        }
+        #app .content .item:nth-child(45).scroll{
+            margin-right: -180px;
+        }
+        #app .content .item:nth-child(46).scroll{
+            margin-right: 280px;
+        }
+        #app .symbol .char:hover{
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body onload="onload()">
+    <div id="app">
+        <div class="fixH"></div>
+        <header class="logo">
+            <img src="./images/nizapp/nizo_logo.svg" alt="">
+        </header>
+        <section class="slogan">
+            <p>S8 COMPACT / 9FPS TO 18FPS / <br> AUTO-B / MULTI-CARTRIDGE / <br> DYNAMIC AUDIO / ON-THE-FLY <br> TELECINE / SFX</p>
+        </section>
+        <section class="content">
+            <div class="item left"><img src="./images/nizapp/001_s1.png" alt=""></div>
+            <div class="item"><img src="./images/nizapp/002_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/003_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/004_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/005_s1.png" alt=""></div>
+            <div class="item left"><img src="./images/nizapp/006A_s1.png" alt=""></div>
+            <div class="item left"><img src="./images/nizapp/006B_s1.png" alt=""></div>
+            <div class="item left"><img src="./images/nizapp/006C_s1.png" alt=""></div>
+            <div class="item left"><img src="./images/nizapp/006D_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/007-A-BELOW_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/007_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/008_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/009_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/009a_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/010_s1.png" alt=""></div>
+            <div class="item left"><img src="./images/nizapp/011_s1.png" alt=""></div>
+            <div class="item left" ><img src="./images/nizapp/012_s1.png" alt=""></div>
+            <div class="item left"><img src="./images/nizapp/013_s1.png" alt=""></div>
+            <div class="item left"><img src="./images/nizapp/014_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/015A_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/015b_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/015c.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/016_s1.png" alt=""></div>
+            <div class="item left"><img src="./images/nizapp/017_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/017b_s1.png" alt=""></div>
+            <div class="item left"><img src="./images/nizapp/019_s1.png" alt=""></div>
+            <div class="item left"><img src="./images/nizapp/020_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/021_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/022_s1.png" alt=""></div>
+            <div class="item left"><img src="./images/nizapp/023_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/024_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/025_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/026_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/027NEW_s1.png" alt=""></div>
+            <div class="item left"><img src="./images/nizapp/028_s1.png" alt=""></div>
+            <div class="item left"><img src="./images/nizapp/029_s1.png" alt=""></div>
+            <div class="item left"><img src="./images/nizapp/030_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/031_s1.png" alt=""></div>
+            <div class="item left"><img src="./images/nizapp/032_s1.png" alt=""></div>
+            <div class="item left"><img src="./images/nizapp/033_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/034_s1.png" alt=""></div>
+            <div class="item left"><img src="./images/nizapp/035_s1.png" alt=""></div>
+            <div class="item left"><img src="./images/nizapp/036_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/arms_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/Films_s1.png" alt=""></div>
+            <div class="item right"><img src="./images/nizapp/led.png" alt=""></div>
+        </section>
+        <footer class="footer">
+            <div>
+                <p><a href="">NOW AVAILABLE • VISIT THE WEBSITE</a></p>
+                <div class="symbol">
+                    <div class="char">T</div>
+                    <div class="char">F</div>
+                    <div class="char">I</div>
+                </div>
+            </div>
+            <p><img src="./images/nizapp/im_logo.svg" alt=""></p>
+        </footer>
+    </div>
+    <script>
+        function onload(){
+            var heightFix = document.querySelector('.slogan').offsetTop + document.querySelector('.slogan').offsetHeight;
+            var heightContent = document.querySelector('.item:nth-child(38)').offsetTop + document.querySelector('.item:nth-child(38)').offsetHeight;
+            document.querySelector('.fixH').style.height = heightFix + 'px';
+            document.querySelector('.content').style.height = heightContent + 'px';
+        }
+        let items = [...document.querySelectorAll(".item")];
+        let footer = document.querySelector(".footer");
+
+        function lazyLoadItemTopToBot() {
+            items.forEach((box, i) => {
+                if ((box.offsetTop + box.offsetHeight) <  window.pageYOffset) {
+                    items[i].classList.add("scroll");
+                }
+            });
+        }
+
+        function lazyLoadFooterTopToBot() {
+            if ((footer.offsetTop - document.querySelector('.fixH').offsetHeight) < window.pageYOffset) {
+                document.querySelector('.logo').classList.add("end");
+            }
+        }
+
+        function lazyLoadItemBotToTop() {
+            items.forEach((box, i) => {
+                if ((box.offsetTop + box.offsetHeight) >  window.pageYOffset) {
+                    items[i].classList.remove("scroll");
+                }
+            });
+        }
+
+        function lazyLoadFooterBotToTop() {
+            if ((document.querySelector('.fixH').offsetTop + document.querySelector('.fixH').offsetHeight) > window.pageYOffset) {
+                document.querySelector('.logo').classList.remove("end");
+            }
+        }
+
+        lazyLoadItemTopToBot();
+        lazyLoadFooterTopToBot();
+
+        window.addEventListener("scroll", () => {
+            lazyLoadItemTopToBot();
+            lazyLoadFooterTopToBot();
+            lazyLoadItemBotToTop();
+            lazyLoadFooterBotToTop();
+        });
+    </script>
+</body>
+</html>
