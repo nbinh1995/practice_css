@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html,body{
+            padding: 0;
+            margin: 0;
+            font-size: 14.5px;
+            font-family: 'Press Start 2P', cursive;
+        }
+        #app{
+            display: grid;
+            max-width: 21.5rem;
+            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, 5rem);
+            grid-auto-rows: 5rem;
+            grid-gap:0.5rem;
+            background-color: #eee;
+        }
+        .card{
+            border: 1px solid #333;
+            width: 5rem;
+            height: 5rem;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="card" id="key00"></div>
+        <div class="card" id="key01"></div>
+        <div class="card" id="key02"></div>
+        <div class="card" id="key03"></div>
+        <div class="card" id="key10"></div>
+        <div class="card" id="key11"></div>
+        <div class="card" id="key12"></div>
+        <div class="card" id="key13"></div>
+        <div class="card" id="key20"></div>
+        <div class="card" id="key21"></div>
+        <div class="card" id="key22"></div>
+        <div class="card" id="key23"></div>
+        <div class="card" id="key30"></div>
+        <div class="card" id="key31"></div>
+        <div class="card" id="key32"></div>
+        <div class="card" id="key33"></div>
+    </div>
+    <script>
+    let matrixCard = [
+        [0,0,0,0],
+        [0,0,0,0],
+        [0,0,0,0],
+        [0,0,0,0]
+    ]
+
+
+    let resetGame = ()=>{
+        matrixCard = [
+            [0,0,0,0],
+            [0,0,0,0],
+            [0,0,0,0],
+            [0,0,0,0]
+        ]
+    }
+
+    let randCard = () => {
+    let posEmpty = [];
+    matrixCard.forEach((row,x)=>{
+        row.forEach((col,y)=>{
+            if(col === 0){
+                posEmpty = [...posEmpty,[x,y]];
+            }
+        })
+    })
+    let posLength = posEmpty.length;
+    if(posLength <= 1){
+        alert('Game over');
+        resetGame();
+        randCard();
+        return;
+    } 
+    let XY = Math.floor(Math.random()*posLength);
+    let pos = posEmpty[XY];
+    let posX =pos[0]
+    let posY = pos[1]
+    matrixCard[posX][posY] = 2;
+    return true;
+    }
+
+    let doLeft  = ()=> {
+        let isDo = false;
+        for (let x = 0; x < 4; x++)
+        {
+            for (let y = 0; y < 3; y++)
+            {
+                for (let y1 = y + 1; y1 < 4; y1++)
+                {
+                    if (matrixCard[x][y1] > 0)
+                    {
+                        if (matrixCard[x][y] == 0)
+                        {
+                            matrixCard[x][y] = matrixCard[x][y1];
+                            matrixCard[x][y1] = 0;
+                            y++;
+                            isDo = true;
+                        }
+                        else if (matrixCard[x][y] == matrixCard[x][y1])
+                        {
+                            matrixCard[x][y] *= 2;
+                            matrixCard[x][y1] = 0;
+                            isDo = true;
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+        if(isDo){
+            randCard();
+        }
+        return isDo;
+    }
+
+    let doRight = ()=> {
+        let isDo = false;
+        for (let x = 0; x < 4; x++)
+        {
+            for (let y = 3; y >= 1; y--)
+            {
+                for (let y1 = y - 1; y1 >= 0; y1--)
+                {
+                    if (matrixCard[x][y1] > 0)
+                    {
+                        if (matrixCard[x][y] == 0)
+                        {
+                            matrixCard[x][y] = matrixCard[x][y1];
+                            matrixCard[x][y1] = 0;
+                            y++;
+                            isDo = true;
+                        }
+                        else if (matrixCard[x][y] == matrixCard[x][y1])
+                        {
+                            matrixCard[x][y] *= 2;
+                            matrixCard[x][y1] = 0;
+                            isDo = true;
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+        if(isDo){
+            randCard();
+        }
+        return isDo;
+    }
+
+    let doUp = ()=>{
+        let isDo = false;
+        for (let y = 0; y < 4; y++)
+        {
+            for (let x = 0; x < 3; x++)
+            {
+                for (let x1 = x + 1; x1 < 4; x1++)
+                {
+                    if (matrixCard[x1][y] > 0)
+                    {
+                        if (matrixCard[x][y] == 0)
+                        {
+                            matrixCard[x][y] = matrixCard[x1][y];
+                            matrixCard[x1][y] = 0;
+                            x--;
+                            isDo = true;
+                        }
+                        else if (matrixCard[x][y] == matrixCard[x1][y])
+                        {
+                            matrixCard[x][y] *= 2;
+                            matrixCard[x1][y] = 0;
+                            isDo = true;
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+        if (isDo)
+            randCard();
+        
+        return isDo;
+    }
+
+    let doDown = () => {
+        let isDo = false;
+        for (let y = 0; y < 4; y++)
+        {
+            for (let x = 3; x >= 1; x--)
+            {
+                for (let x1 = x - 1; x1 >= 0; x1--)
+                {
+                    if (matrixCard[x1][y] > 0)
+                    {
+                        if (matrixCard[x][y] == 0)
+                        {
+                            matrixCard[x][y] = matrixCard[x1][y];
+                            matrixCard[x1][y] = 0;
+                            x++;
+                            isDo = true;
+                        }
+                        else if (matrixCard[x][y] == matrixCard[x1][y])
+                        {
+                            matrixCard[x][y] *= 2;
+                            matrixCard[x1][y] = 0;
+                            isDo = true;
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+        if (isDo)
+            randCard();
+        return isDo;
+    }
+    function drawCards(){
+        matrixCard.forEach((row,x)=>{
+        row.forEach((col,y)=>{
+            let id = 'key'+x+y;
+            document.getElementById(id).innerText = matrixCard[x][y] || '';
+        })
+        })
+    }
+    function actionCard (e){
+        if(e.which == 37){
+            doLeft();
+        }
+        if(e.which == 39){
+            doRight();
+        }
+        if(e.which == 38){
+            doUp();
+        }
+        if(e.which == 40){
+            doDown();
+        }
+        drawCards();
+    }
+    function debounce(func, timeout = 300){
+    let timer;
+    return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => { func.apply(this, args); }, timeout);
+    };
+    }
+    resetGame();
+    randCard();
+    drawCards();
+    document.addEventListener('keyup',function(e){
+        debounce(actionCard(e),100);
+    })
+    </script>
+</body>
+</html>
